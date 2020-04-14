@@ -1,0 +1,30 @@
+{
+  "name": "fork-kmt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build index.pug -d docs",
+    "dev": "parcel index.pug"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kkk-glitch/fork-kmt.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kkk-glitch/fork-kmt/issues"
+  },
+  "homepage": "https://github.com/kkk-glitch/fork-kmt#readme",
+  "devDependencies": {
+    "cssnano": "^4.1.10",
+    "pug": "^2.0.4",
+    "sass": "^1.26.3"
+  },
+  "dependencies": {
+    "parcel": "^1.12.4"
+  }
+}
