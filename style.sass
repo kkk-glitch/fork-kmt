@@ -1,7 +1,18 @@
+@function makelongshadow($color, $n)
+  $val: 0px 0px $color
+  @for $i from 1 through $n
+    $color2: lighten($color, $i*.8)
+    $val: #{$val}, #{$i}px #{$i}px #{$color2}
+  
+  @return $val
+
+
+=longshadow($color, $n: 10)
+  text-shadow: makelongshadow($color, $n)
+
 @keyframes spin
   from
     transform: rotate(0deg)
-
   to
     transform: rotate(360deg)
 
@@ -10,12 +21,12 @@
 
 html, body
   height: 100%
-  background-color: #100D5E
   color: white
   font-family: 'Noto Sans TC', sans-serif
   overflow-y: hidden
 
 #app
+  background-image: linear-gradient(to right, #434343 0%, black 100%)
   position: relative
   height: 100%
   display: flex
@@ -46,7 +57,7 @@ h1
   display: flex
   flex-direction: column
   font-size: 4rem
-  text-shadow: 5px 5px 0px #E72410
+  +longshadow(#E72410)
   color: white
   font-weight: 700
 
@@ -83,18 +94,19 @@ h1
     margin-top: 3rem
     font-size: 2rem
     font-weight: 500
-    text-shadow: 3px 3px 0px blue
+    +longshadow(#100D5E, 5)
 
   .count
     font-size: 3rem
-    margin-right: 1rem
     text-shadow: 3px 3px 0px grey
+    +longshadow(#222, 5)
     font-family: 'Black Ops One', 'Noto Sans TC', cursive
 
   .unit
-    font-size: 70%
+    font-size: 60%
     font-weight: 700
-    text-shadow: none
+    margin: 0 .25rem
+    +longshadow(#222, 5)
 
 .since a
   color: white
